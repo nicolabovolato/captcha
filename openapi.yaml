@@ -14,7 +14,7 @@ paths:
     post:
       summary: "Generates a new captcha"
       responses:
-        '200':
+        '201':
           description: "Captcha generated"
           content:
             application/json:
