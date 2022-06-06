@@ -1,0 +1,29 @@
+{
+  "name": "captcha-validation",
+  "version": "1.0.0",
+  "description": "Captcha service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json",
+    "start": "node build/index.js",
+    "dev": "concurrently \"npx tsc -w\" \"nodemon build/index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicola-bovolato/captcha-validation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicola-bovolato/captcha-validation/issues"
+  },
+  "homepage": "https://github.com/nicola-bovolato/captcha-validation#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.40",
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.7.3"
+  }
+}
