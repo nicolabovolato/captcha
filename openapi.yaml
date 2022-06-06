@@ -1,0 +1,58 @@
+openapi: 3.0.3
+
+info:
+  title: "Captcha Service"
+  description: "Generates and validates captchas"
+  version: "1.0"
+
+servers:
+  - url: http://localhost:3000/
+  - url: https://nb-captcha-api.herokuapp.com/
+
+paths:
+  /captchas:
+    post:
+      summary: "Generates a new captcha"
+      responses:
+        '200':
+          description: "Captcha generated"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    schema:
+                    $ref: '#/components/schemas/id'
+                  pngBase64:
+                    type: string
+                    format: base64
+
+  /captchas/{id}:
+    put:
+      summary: "Validates a captcha"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            $ref: '#/components/schemas/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answer:
+                  type: string
+      responses:
+        '200':
+          description: "Correct answer"
+        '401':
+          description: "Wrong answer"
+
+components:
+  schemas:
+    id:
+      type: string
+      format: uuid
