@@ -24,7 +24,7 @@ paths:
                   id:
                     schema:
                     $ref: '#/components/schemas/id'
-                  pngBase64:
+                  jpegBase64:
                     type: string
                     format: base64
 
