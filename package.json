@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Captcha service",
   "main": "index.js",
+  "engines" : {
+    "npm" : ">=7.0.0",
+    "node" : ">=16.0.0"
+  },
   "scripts": {
     "test": "jest --coverage",
     "build": "tsc -p tsconfig.json",
