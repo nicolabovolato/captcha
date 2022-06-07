@@ -1,24 +1,15 @@
 import IMap from './IMap'
-import { injectable } from 'tsyringe'
-import { createClient, RedisClientType } from 'redis'
+import { inject, injectable } from 'tsyringe'
+import { RedisClientType } from 'redis'
 import Config from '../config'
 import Logger from './Logger'
 
 @injectable()
 export default class RedisMap implements IMap<string, string> {
 
-    private client: RedisClientType
     private expiry: number
 
-    public constructor(private logger: Logger, config: Config) {
-        this.client = createClient({
-            url: config.redisUrl,
-            socket: {
-                reconnectStrategy: _ => config.redisReconnectTimeout
-            },
-            disableOfflineQueue: true
-        })
-
+    public constructor(private logger: Logger, @inject('RedisClient') private client: RedisClientType, config: Config) {
         this.expiry = config.redisExpiry
 
         this.client.connect()
