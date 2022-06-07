@@ -6,7 +6,7 @@ import Pino, { Logger as PinoLogger } from 'pino'
 import Captchas from './routes/captchas'
 import Config, { parseConfig } from './config'
 
-import { container } from "tsyringe"
+import { container } from 'tsyringe'
 import RedisMap from './services/RedisMap'
 import IMap from './services/IMap'
 import Logger from './services/Logger'
@@ -15,9 +15,9 @@ const config = parseConfig()
 const pino = Pino({ level: config.logLevel })
 
 container.register<Config>(Config, { useValue: config })
-container.register<PinoLogger>("PinoLogger", { useValue: pino })
+container.register<PinoLogger>('PinoLogger', { useValue: pino })
 container.register<Logger>(Logger, { useValue: new Logger(pino) })
-container.register<IMap<string, string>>("IMap<string,string>", { useClass: RedisMap })
+container.register<IMap<string, string>>('IMap<string,string>', { useClass: RedisMap })
 
 const server = fastify({ logger: pino })
 

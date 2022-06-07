@@ -8,7 +8,7 @@ import Logger from './Logger'
 @injectable()
 export default class CaptchaService implements ICaptchaService {
 
-    public constructor(@inject("IMap<string,string>") private store: IMap<string, string>, private logger: Logger) { }
+    public constructor(@inject('IMap<string,string>') private store: IMap<string, string>, private logger: Logger) { }
 
     public async generate(): Promise<CaptchaInfo> {
         const id = uuidv4()
