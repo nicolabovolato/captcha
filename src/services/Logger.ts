@@ -19,8 +19,6 @@ export default class Logger {
     }
 
     public error(obj: any, msg: string | undefined, ...args: any[]) {
-        // console.log(this.logger)
-        //this.logger.error('AAAAAAAA')
         this.logger.error(obj, msg, args)
     }
 }
