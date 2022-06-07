@@ -1,4 +1,4 @@
-import IMap from "../src/services/IMap"
+import IMap from '../src/services/IMap'
 
 export default class TestMap implements IMap<string, string> {
 
