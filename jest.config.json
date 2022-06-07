@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "transform": {
+    "^.+\\.ts?$": "ts-jest"
+  },
+  "setupFiles": [
+		"<rootDir>/test/setupTests.ts"
+  ]
+}
