@@ -22,7 +22,6 @@ paths:
                 type: object
                 properties:
                   id:
-                    schema:
                     $ref: '#/components/schemas/id'
                   jpegBase64:
                     type: string
