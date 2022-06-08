@@ -6,8 +6,8 @@ info:
   version: "1.0"
 
 servers:
-  - url: http://localhost:3000/
-  - url: https://nb-captcha-api.herokuapp.com/
+  - url: http://localhost:3000/v1
+  - url: https://nb-captcha-api.herokuapp.com/v1
 
 paths:
   /captchas:

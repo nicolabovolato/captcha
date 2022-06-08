@@ -31,7 +31,7 @@ container.register<IMap<string, string>>('IMap<string,string>', { useClass: Redi
 
 const server = fastify({ logger: pino })
 
-server.register(Captchas)
+server.register(Captchas, { prefix: '/v1' })
 
 server.listen(config.port, '0.0.0.0', (err) => {
     if (err) {
