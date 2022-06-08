@@ -11,7 +11,7 @@
     "test": "jest --coverage",
     "build": "tsc -p tsconfig.json",
     "start": "node build/index.js",
-    "dev": "nodemon build/index.js | pino-pretty -c -t",
+    "dev": "nodemon src/index.ts | pino-pretty -c -t",
     "lint": "eslint . --ext .ts"
   },
   "repository": {
