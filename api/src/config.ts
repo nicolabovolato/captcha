@@ -7,6 +7,7 @@ export default class Config {
     readonly redisReconnectTimeout!: number
     readonly logLevel!: string
     readonly port!: number
+    readonly corsOrigin!: string | boolean
 }
 
 export function parseConfig(): Config {
@@ -15,6 +16,7 @@ export function parseConfig(): Config {
         redisExpiry: Number(process.env.REDIS_EXPIRY) || 15 * 60,
         redisReconnectTimeout: Number(process.env.REDIS_RECONNECT_TIMEOUT) || 5000,
         logLevel: process.env.LOG_LEVEL || 'info',
-        port: Number(process.env.PORT) || 3000
+        port: Number(process.env.PORT) || 3000,
+        corsOrigin: process.env.CORS_ORIGIN || false
     }
 }

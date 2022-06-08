@@ -1,5 +1,6 @@
 import 'reflect-metadata'
 import fastify from 'fastify'
+import cors from '@fastify/cors'
 
 import Pino, { Logger as PinoLogger } from 'pino'
 
@@ -31,6 +32,7 @@ container.register<IMap<string, string>>('IMap<string,string>', { useClass: Redi
 
 const server = fastify({ logger: pino })
 
+server.register(cors, { origin: config.corsOrigin })
 server.register(Captchas, { prefix: '/v1' })
 
 server.listen(config.port, '0.0.0.0', (err) => {

@@ -17,7 +17,8 @@ describe('RedisMap', () => {
         redisExpiry: 1000,
         redisReconnectTimeout: 5000,
         logLevel: '',
-        port: 0
+        port: 0,
+        corsOrigin: false
     }
 
     const logger = new Logger(pino({ level: 'silent' }))
