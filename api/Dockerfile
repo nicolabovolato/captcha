@@ -16,6 +16,14 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY --from=build /usr/app/build ./build
 
-EXPOSE 3000
+ENV PORT=3000
+ENV LOG_LEVEL=
+ENV CORS_ORIGIN=
+ENV REDIS_URL=
+ENV REDIS_EXPIRY=
+ENV REDIS_RECONNECT_TIMEOUT=
+
+EXPOSE ${PORT}
+
 ENTRYPOINT ["npm", "run"]
 CMD ["start"]
