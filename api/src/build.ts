@@ -1,5 +1,4 @@
 import fastify, { FastifyInstance } from 'fastify'
-import cors from '@fastify/cors'
 
 import Pino, { Logger as PinoLogger } from 'pino'
 
@@ -32,12 +31,10 @@ export function configure() {
 }
 
 export function build(): FastifyInstance {
-    const config = container.resolve(Config)
     const pino: PinoLogger = container.resolve('PinoLogger')
 
     const server = fastify({ logger: pino })
 
-    server.register(cors, { origin: config.corsOrigin })
     server.register(Captchas, { prefix: '/v1' })
 
     return server
