@@ -13,4 +13,4 @@ COPY --from=build /usr/app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 
 EXPOSE 80
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx", "-g", "daemon", "off;"]
