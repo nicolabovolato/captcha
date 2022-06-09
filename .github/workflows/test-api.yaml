@@ -12,10 +12,6 @@ jobs:
       run:
         working-directory: ./api
 
-    strategy:
-      matrix:
-        node-version: []
-
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
