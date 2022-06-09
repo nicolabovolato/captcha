@@ -1,5 +1,8 @@
 # Captcha
 
+[![Test api](https://github.com/nicola-bovolato/captcha/actions/workflows/test-api.yaml/badge.svg?branch=master)](https://github.com/nicola-bovolato/captcha/actions/workflows/test-api.yaml)
+
+
 Simple captcha service powered by modern technologies
 
 ### Run the app
