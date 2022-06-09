@@ -3,7 +3,7 @@ name: Test api
 on:
   push:
     paths:
-      - 'api/**'
+    #  - 'api/**'
 
 jobs:
   test:
