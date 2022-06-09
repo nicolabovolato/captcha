@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    #paths:
-    #  - 'api/**'
+    paths:
+      - 'api/**'
 
 jobs:
   build:
