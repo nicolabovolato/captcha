@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+
+  redis:
+    image: redis:7-alpine
+
+  api:
+    build: ./api
+    ports:
+      - 3000:3000
+    environment:
+      - CORS_ORIGIN=http://localhost
+      - REDIS_URL=redis://redis:6379
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_URL=http://localhost:3000
+    ports:
+      - 80:80
