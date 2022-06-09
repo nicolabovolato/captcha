@@ -10,7 +10,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      - CORS_ORIGIN=http://localhost
+      - CORS_ORIGIN=*
       - REDIS_URL=redis://redis:6379
     depends_on:
       - redis
@@ -24,3 +24,11 @@ services:
       - 80:80
     depends_on:
       - api
+
+  localtunnel:
+    build:
+      context: .
+      dockerfile: lt.Dockerfile
+    command: "lt --port 80 --local-host frontend"
+    depends_on:
+      - frontend
