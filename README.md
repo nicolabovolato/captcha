@@ -8,6 +8,8 @@ Simple captcha service powered by modern technologies
  - Visit [localhost](http://localhost)
  - Or visit the url specified in `docker-compose logs localtunnel`
 
+The app is also hosted on [heroku](https://nb-captcha.herokuapp.com/)
+
 ## Technologies
 
  ### [Frontend](./frontend/)
