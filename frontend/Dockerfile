@@ -12,6 +12,5 @@ FROM nginx:stable-alpine as release
 COPY --from=build /usr/app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 
-ENV PORT=80
-EXPOSE ${PORT}
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
