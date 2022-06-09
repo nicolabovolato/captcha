@@ -12,6 +12,8 @@ services:
     environment:
       - CORS_ORIGIN=http://localhost
       - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
 
   frontend:
     build:
@@ -20,3 +22,5 @@ services:
         - VITE_API_URL=http://localhost:3000
     ports:
       - 80:80
+    depends_on:
+      - api
