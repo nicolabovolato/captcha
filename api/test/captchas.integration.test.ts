@@ -40,7 +40,7 @@ describe('[INTEGRATION] Captchas', () => {
         })
 
         it('Returns valid jpeg url base64', async () => {
-            const regex = new RegExp(/^data:image\/jpeg;base64,(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
+            const regex = new RegExp('^data:image/jpeg;base64,(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$')
 
             const result = await server.inject().post(endpoint).end()
             const img = result.json().jpegBase64
